@@ -10,9 +10,9 @@ var paths
 
 
 func _ready():
-	$Sprite.texture = spriteGen.genImage()
-	selectMap = get_tree().get_root().get_node("Level/TileMap2")
-	globalTween.connect("tween_completed", self, "tween_end")
+	$Sprite.texture = spriteGen.genImage() #gens the texture
+	selectMap = get_tree().get_root().get_node("Level/SelectTiles") #saves a reference to the highlight tiles
+	globalTween.connect("tween_completed", self, "tween_end") #connects a signal from the tween to the "tween_end" function
 
 
 func _process(delta):
